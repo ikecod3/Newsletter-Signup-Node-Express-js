@@ -4,7 +4,7 @@
   "public": true,
   "builds": [
     {
-      "src": "server.js",
+      "src": "app.js",
       "use": "@vercel/node"
     },
     {
@@ -15,7 +15,7 @@
   "routes": [
     {
       "src": "/((?!.*\\.\\w+$).*)",
-      "dest": "/server.js"
+      "dest": "/app.js"
     },
     {
       "src": "/(.+\\.[a-z]+)$",
