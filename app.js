@@ -6,7 +6,7 @@ port = 3000;
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static("public"));
-app.get("/", (req, res) => res.sendFile(__dirname + "/public/signup.html"));
+app.get("/", (req, res) => res.sendFile(__dirname + "/public/index.html"));
 
 app.post("/", (req, res) => {
   const fName = req.body.firstName;
@@ -75,8 +75,6 @@ app.post("/failure", (req, res) => {
   res.redirect("/");
 });
 
-// API key
-// 7edde904de2b05cc4b3b344f3527951a-us21
 app.listen(process.env.PORT || port, () =>
   console.log(`Server is running on port: ${port}`)
 );
