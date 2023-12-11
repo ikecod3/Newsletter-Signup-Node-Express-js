@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
+
+    <title>Newsletter Signup</title>
+  </head>
+  <body>
+    <div
+      class="mx-auto flex flex-col sm:flex-row items-center justify-center h-screen gap-4"
+    >
+      <div class="w-full">
+        <img
+          class="h-50"
+          src="https://img.freepik.com/premium-vector/mail-icon-vector-illustration-design_598213-4015.jpg"
+          alt=""
+        />
+      </div>
+      <div class="flex flex-col gap-3 w-full mx-6 p-4">
+        <h1 class="text-3xl font-extrabold text-center">
+          Sign Up to My Newsletter
+        </h1>
+
+        <form
+          action="/"
+          method="post"
+          class="rounded-lg space-y-2 flex flex-col"
+        >
+          <input
+            type="text"
+            name="firstName"
+            id=""
+            placeholder="First Name"
+            class="rounded-lg"
+          />
+          <input
+            type="text"
+            name="lastName"
+            id=""
+            placeholder="Last Name"
+            class="rounded-lg"
+          />
+          <input
+            type="text"
+            name="emailAddress"
+            id=""
+            placeholder="Email Address"
+            class="rounded-lg"
+          />
+
+          <button
+            type="submit"
+            class="bg-[#E45825] text-white rounded-lg p-2 mt-8"
+          >
+            Sign Me Up
+          </button>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
