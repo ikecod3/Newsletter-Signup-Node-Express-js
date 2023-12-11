@@ -6,9 +6,7 @@ port = 3000;
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static("public"));
-app.get("/public", (req, res) =>
-  res.sendFile(__dirname + "/public/signup.html")
-);
+app.get("/", (req, res) => res.sendFile(__dirname + "/public/signup.html"));
 
 app.post("/", (req, res) => {
   const fName = req.body.firstName;
