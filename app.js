@@ -9,9 +9,9 @@ app.use(express.static("public"));
 app.get("/", (req, res) => res.sendFile(__dirname + "/public/index.html"));
 
 app.post("/", (req, res) => {
-  const fName = req.body.firstName;
-  const lName = req.body.lastName;
-  const email = req.body.emailAddress;
+  const fName = req.body.firstName.trim();
+  const lName = req.body.lastName.trim();
+  const email = req.body.emailAddress.trim();
 
   //mailchimp API parsing data format
   const data = {
@@ -38,7 +38,10 @@ app.post("/", (req, res) => {
 
   //making https request
   const request = https.request(url, options, (response) => {
-    if (response.statusCode === 200) {
+    if (
+      response.statusCode === 200 &&
+      [fName, lName, email].some((value) => value !== "")
+    ) {
       res.sendFile(__dirname + "/public/success.html");
     } else {
       res.sendFile(__dirname + "/public/failure.html");
